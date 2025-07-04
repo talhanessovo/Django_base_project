@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first APP</title>
-</head>
-<body>
-    <h1>A brand new app</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block  title %}
+Home page
+{% endblock %}
+
+{% block  content %}
+
+  <h1 class="bg-orange-500 text-3xl text-center">Basic webpage</h1>
+  <p class="text-center w-470 bg-orange-100"> Useful information</p>
+
+<div class="grid grid-cols-3 grid-rows-2 gap-4 p-5">
+{% for chai in chais %}
+    <div class="bg-blue-100 m-5 rounded p-4">
+        <img class="block mx-auto rounded w-[100%] h-auto" src="{{chai.image.url}}" alt="">
+        <h3 class="text-2xl font-bold text-center mt-2">{{chai.name}}</h3>
+        <a href="#">
+            <Button 
+            type ="button"
+            class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus-offset-2 focus:ring-orange-500">
+                {{chai.type}} - {{chai.id}}
+            </Button>
+        </a>
+    </div>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}
+
+

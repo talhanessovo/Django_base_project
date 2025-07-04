@@ -7,5 +7,15 @@ Home page
 {% block  content %}
 
   <h1 class="bg-orange-500 text-3xl text-center">Basic webpage</h1>
-  <p class="ml-400 text-center w-50 bg-orange-400"> Useful information</p>
+  <p class="text-center w-50 bg-orange-400"> Useful information</p>
 {% endblock %}
+
+
+{% for chai in chais %}
+    <div class="chai-item">
+        <img src="{{chai.image.url}}" alt="">
+        <h3>{{chai.name}}</h3>    
+        test 
+    </div>
+
+{% endfor %}
